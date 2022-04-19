@@ -1,10 +1,3 @@
----
-title: 简介
-description: 'FC 博客'
-position: 1
-category: 'FC_Blog'
----
-
 # FC Blogs
 
 ## 导语
