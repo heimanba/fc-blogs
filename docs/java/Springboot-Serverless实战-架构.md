@@ -20,7 +20,7 @@ Mall 的架构如下图所示，分为网关层，应用层，数据存储层。
 - mall-search：于Elasticsearch的商品搜索系统
 - Mall-admin-web：mall-admin 的前端展示，基于 Vue+Element 实现
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1635518177477-9483f633-440d-4015-9d4a-7b9d32e1efc3.png#id=hFSCs&originHeight=665&originWidth=1744&originalType=binary&ratio=1&status=done&style=none)
+![](https://img.alicdn.com/imgextra/i1/O1CN01epPLnU1RcxYrEVBNS_!!6000000002133-2-tps-1744-665.png)
 
 Mall 使用了 MySQL，Redis，MongoDB，ElaisticSearch 等多种数据库。主要业务数据存储在 MySQL，缓存数据存储在 Redis，用户行为分析数据存储在 MongoDB，搜索数据存储在 ElasticSearch 中。SpringBoot 应用服务间使用 RabbitMQ 实现异步通信。
 
@@ -38,7 +38,7 @@ Mall 是一个非常标准的 3 层架构 Web 应用，改造为 Serverless 架�
 
 函数计算也提供了一系列工具，帮助开发者通过 Jenkins CICD 工具发布应用。我们将在后续的文章中一一展示。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1635558315375-5d5ea2dd-abcb-4473-8477-e22817184a5c.png#id=nOX6T&originHeight=734&originWidth=1744&originalType=binary&ratio=1&status=done&style=none)
+![](https://img.alicdn.com/imgextra/i4/O1CN01u6lZDH205XCmBreUb_!!6000000006798-2-tps-1744-734.png)
 
 ## 在函数计算平台运行 SpringBoot 应用
 

@@ -15,11 +15,11 @@ category: 'FC_Blog'
 
 在优化冷启动之前，我们首先分析清楚冷启动各个阶段的耗时。在函数计算（FC） 控制台的服务配置界面，开启链路追踪功能。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636529127016-4d7c8676-164f-4830-a42f-fa5f4c1e3ad8.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=P0e5T&originHeight=798&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01tub8kY1PKWNsG2Cpe_!!6000000001822-2-tps-1500-798.png)
 
 对 mall-admin 服务发起请求，成功后查看 FC 控制台，我们能看到相应的请求信息。注意关闭“仅查看函数错误”，这样才会显示所有请求。指标监控和调用链路数据收集有一定延时，如果没有显示，请等待一会再刷新。找到冷启动标记的请求，点击 “更多” 下的 “请求详情”。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641283516964-1e17dc64-1011-4a40-bb57-ea7370269e3e.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=nyZEH&originHeight=721&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01jw6L6Z1bKJanrQNyn_!!6000000003446-2-tps-1500-721.png)
 
 调用链路会显示冷启动各个环节的耗时。冷启动包含以下几个环节：
 
@@ -28,7 +28,7 @@ category: 'FC_Blog'
 - 应用初始化（Initialization）：函数计算提供了 Initializer 接口，用户可以将一些初始化逻辑放在 initializer 中执行
 - 调用延时（Invocation）：处理请求的延时，这个延时非常短
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636532656418-6570b6e9-b3ab-4923-b064-2ce8a408672e.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=zWAMb&originHeight=390&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01iPUhET1RyUAh2xfCc_!!6000000002180-2-tps-1500-390.png)
 
 从上述链路追踪图来看，实例启动时间是瓶颈，我们可以采取多种方式来优化。
 
@@ -38,15 +38,15 @@ Java 类应用普遍启动较慢。应用在初始化时，也需要和很多外
 
 在函数计算控制台，我们可以在“弹性伸缩”页面为函数设置预留实例。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636616176229-bde75cec-bad6-4801-a61d-6346ed0b1ea4.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=OYNx0&originHeight=470&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01Tk731G1REgZBmhC9L_!!6000000002080-2-tps-1500-470.png)
 
 用户在控制台中配置最小和最大实例数。平台会预留最小实例数目的实例，最大实例是指该函数下实例的上限。用户也可以设置定时预留和按指标预留的规则。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636616934812-6d21f0c2-2586-430d-89c1-6d8023d195d0.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=nk1Hf&originHeight=618&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01cRqjAN1U513PdNERh_!!6000000002465-2-tps-1500-618.png)
 
 创建预留规则后，系统就会创建预留实例。当预留实例就绪后，我们再访问函数就不会有冷启动。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636618290293-d4c58351-6b1d-49c7-9826-67a46a28bea4.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=BQCdJ&originHeight=469&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01m1Cp2x1DkpkMF0gTZ_!!6000000000255-2-tps-1500-469.png)
 
 ### 1.2. 优化实例启动速度
 
@@ -74,24 +74,24 @@ JAVA_TOOL_OPTIONS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 
 如下图所示，对 mall-admin 函数配置环境变量。然后执行 `sudo -E s mall-admin deploy` 部署。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1642384597670-93d52126-1392-4077-add5-42e619a617a8.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=aPGAW&originHeight=1433&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01b4RcS31SueTQjYHxz_!!6000000002307-2-tps-1500-1433.png)
 
 #### 登录实例检查环境变量是否配置正确
 
 在控制台函数详情页的请求列表中找到对应的请求，点击`更多`中的`实例详情`链接。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1642384850027-aac7716b-9bde-4866-841d-675ac6726a9c.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=fNr3T&originHeight=700&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01Danlch1ftol8aiCde_!!6000000004065-2-tps-1500-700.png)
 
 在实例详情页中点击`登录实例`。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1642385045445-625b2fbc-3ff1-48a1-9de8-61c7f760a7a6.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=IAPjf&originHeight=740&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01y42Ng61hb9quhuIgb_!!6000000004295-2-tps-1500-740.png)
 
 在 shell 界面中执行 echo 命令，查看对应的环境变量是否设置正确。
 
 > 注意：对于非预留实例，一段时间没有请求后，函数计算系统会自动回收实例。此时无法再登入实例（上面的`实例详情`页面中的`登录实例`按钮会变灰）。所以请执行调用后，在实例被回收之前尽快登录。
 
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1642385572234-8531e14c-0fe7-4a74-892b-d1885c40c1a5.png#crop=0&crop=0&crop=1&crop=1&id=fbrgA&originHeight=980&originWidth=2840&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01oXYdGp1b3MwByH3VU_!!6000000003409-2-tps-2840-980.png)
 
 ## 2. 配置合理的实例参数
 
@@ -108,5 +108,7 @@ JAVA_TOOL_OPTIONS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 实例并发度作为伸缩依据虽然有上述优点，但用户常常并不知道该设置多大的实例并发度。推荐按照下述流程确定合理的并发度：
 
 1. 将应用函数的最大实例数设置为1，确保压测到单个实例的性能。
-1. 使用负载压测工具对应用进行压测，查看 tps 和请求延时等指标
-1. 逐步调大实例并发度，如果性能仍然良好，则继续调大；如果性能不符合预期，则调小并发度。
+2. 使用负载压测工具对应用进行压测，查看 tps 和请求延时等指标
+3. 逐步调大实例并发度，如果性能仍然良好，则继续调大；如果性能不符合预期，则调小并发度。
+
+如果不是场景类压测， 只是单纯对单个 API 探测并发度， 可以尝试 [S 工具内存&并发度探测](https://docs.serverless-devs.com/fc/command/eval)

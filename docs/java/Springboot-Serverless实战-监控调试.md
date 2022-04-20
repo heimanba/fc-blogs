@@ -35,7 +35,7 @@ sudo -E s mall-admin logs -t
 
 此时 Serverless Devs 工具会实时监听 mall-admin 应用下所有实例的日志，将新产生的日志实时展示。此后，当我们通过浏览器或者 curl 等方式给 mall-admin 应用发送请求，就能看到对应的请求处理日志输出。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/995498/1636902168825-584ab822-90f1-4b53-b3c6-c167f14db272.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=AKRYr&originHeight=851&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01EUftQy1PE6q4HSaW5_!!6000000001808-2-tps-1500-851.png)
 
 Serverless Devs 也支持根据关键词查询日志。比如我们可以执行下面的命令，查看 mall-admin 应用 ERROR 级别的日志。
 
@@ -51,16 +51,16 @@ s mall-admin logs -t --keyword=ERROR
 
 如下图所示，请求列表展示了请求的执行情况，包括成功/失败，是在什么函数版本上执行的，执行时长，内存用量，在哪个实例上执行等等。也可以方便的查询请求相关的日志。
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641026315260-f01f59ab-dbb3-4346-9600-358c29b66868.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=LdTLW&originHeight=743&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01xuUtfp1yYGpGXJY52_!!6000000006590-2-tps-1500-743.png)
 
 下图展示了实例维度的信息。除了指标，用户也可以到滚动到页面下方，查看对应的实例列表，以及登录到实例上执行相关的操作。
 
 > 注意：函数计算的**按量实例**完全由系统管理，实例在闲置一段时间后就会被系统回收。被回收的实例不再被使用，不能登录。在下图中以灰色显示。
 
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641026494907-77b9b463-2332-4624-99e2-921793f3a3c7.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=jPEzk&originHeight=724&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN011aqeRO1VCArNZhYGt_!!6000000002616-2-tps-1500-724.png)
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641026762445-f553cb44-f89b-4279-92e3-c632c3e67610.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=lfriT&originHeight=460&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01TSdPTH1pgD9KQkOjj_!!6000000005389-2-tps-1500-460.png)
 
 通过函数计算平台提供的日志收集和查询能力，用户的开发流程被无缝衔接起来。修改代码，使用 Serverless Devs 工具部署应用，查看日志，整个流程丝般顺滑。
 
@@ -79,7 +79,7 @@ sudo -E s mall-admin local start auto
 > 注意：每次启动本地实例，监听端口是随机生成的。
 
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641029390475-fbf466c4-b58c-4adc-94de-0380af550137.png#crop=0&crop=0&crop=1&crop=1&id=AlXlm&originHeight=446&originWidth=1892&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN012AUKLA1rrmNz55z7O_!!6000000005685-2-tps-1892-446.png)
 
 ## 端云联调
 
@@ -110,7 +110,7 @@ sudo -E s mall-admin proxied setup
 > 注意：当使用了端云联调后，所有的流量都会发送到本地的实例上。要让流量恢复到函数计算上的实例，需要执行 s deploy 重新部署相关的函数。
 
 
-![](https://cdn.nlark.com/yuque/0/2022/png/995498/1641474522977-d38a09d8-2d1a-4c13-a7c1-c7e8c708dfb2.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#crop=0&crop=0&crop=1&crop=1&id=Na2rY&originHeight=933&originWidth=1500&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01Sotv3i1p61rWEyYqu_!!6000000005310-2-tps-1500-933.png)
 
 ## 总结
 从下图的两个报告中， 我们可以看出， 在 Serverless 领域， 调试和可观测一直是 Serverless 开发实践者最大的两个痛点。
