@@ -11,7 +11,7 @@
 
 **快速体验示例**
 
-[PHP 应用部署到 FC 索引大全](https://github.com/devsapp/start-web-framework/tree/master/web-framework/php)
+[PHP 应用部署到 FC 索引大全](https://gitee.com/devsapp/start-web-framework/tree/master/web-framework/php)
 
 对 Serverless PHP 感兴趣的同学， 可以加入 Serverless+PHP 专项交流钉钉群：31897696
 
@@ -23,7 +23,7 @@
 
 **快速体验示例**
 
-- [最简单 Springboot 项目](https://github.com/devsapp/start-web-framework/tree/master/web-framework/java/springboot)
+- [最简单 Springboot 项目](https://gitee.com/devsapp/start-web-framework/tree/master/web-framework/java/springboot)
 
-- [Serverless Litemall 电商商城案例](https://github.com/devsapp/start-litemall/tree/main/src)
+- [Serverless Litemall 电商商城案例](https://gitee.com/devsapp/start-litemall/tree/main/src)
 
